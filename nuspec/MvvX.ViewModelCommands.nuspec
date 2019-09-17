@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>MvvX.ViewModelCommands</id>
+        <version>1.0.0.0</version>
+        <title>ViewModel command object for mvvmcross</title>
+        <authors>MACK Mathieu</authors>
+        <owners>MACK Mathieu</owners>
+        <licenseUrl>https://github.com/mathieumack/MvvX.ViewModelCommands</licenseUrl>
+        <projectUrl>https://github.com/mathieumack/MvvX.ViewModelCommands</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This package contains a viewModelcommand object that allow you to override CanExecute or Execute methods (pcl)</description>
+        <tags>mvvmcross plugin icommand</tags>
+        <dependencies>
+            <group>
+                <!-- Always include regardless of target framework -->
+                <dependency id="MvvmCross.Platform" version="5.0.1" />
+            </group>
+        </dependencies>  
+    </metadata>
+    <files>     
+        <!-- ALL -->
+        <file src="..\MvvX.ViewModelCommands\bin\Release\MvvX.ViewModelCommands.XML" target="lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch" />
+        <file src="..\MvvX.ViewModelCommands\bin\Release\MvvX.ViewModelCommands.dll" target="lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch" />
+    </files>
+</package>
