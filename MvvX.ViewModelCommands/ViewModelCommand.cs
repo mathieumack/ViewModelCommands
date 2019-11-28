@@ -1,9 +1,9 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace MvvX.ViewModelCommands
 {
-    public abstract class ViewModelCommand<T> : IBaseCommand where T : MvxViewModel
+    public abstract class ViewModelCommand<T> : IBaseCommand where T : IMvxViewModel
     {
         public T ViewModel { get; private set; }
 
