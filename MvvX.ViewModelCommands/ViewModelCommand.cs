@@ -1,34 +1,40 @@
 ﻿using System;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace MvvX.ViewModelCommands
 {
-    public abstract class ViewModelCommand<T> : IBaseCommand where T : IMvxViewModel
+    /// <summary>
+    /// Command
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public abstract class ViewModelCommand<T> : BaseCommand<T>, IMvxCommand where T : IMvxViewModel
     {
-        public T ViewModel { get; private set; }
+        #region CanExecute
 
-        public virtual void Execute()
-        {
-            Execute(null);
-        }
-
-        public abstract void Execute(object parameter);
-
-        public virtual bool CanExecute(object parameter)
+        public virtual bool CanExecute()
         {
             return true;
         }
 
-        public virtual void Configure(T viewModel)
+        [Obsolete("Use the strongly typed version of CanExecute instead", true)]
+        public bool CanExecute(object parameter)
         {
-            this.ViewModel = viewModel;
+            return CanExecute();
         }
 
-        public void RaiseCanExecuteChanged()
+        #endregion
+
+        #region Execute
+
+        public abstract void Execute();
+
+        [Obsolete("Use the strongly typed version of CanExecute instead", true)]
+        public void Execute(object parameter)
         {
-            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+            Execute();
         }
 
-        public event EventHandler CanExecuteChanged;
+        #endregion
     }
 }
