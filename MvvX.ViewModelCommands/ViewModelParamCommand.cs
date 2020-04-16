@@ -19,8 +19,8 @@ namespace MvvX.ViewModelCommands
             return true;
         }
 
-        [Obsolete("Use the strongly typed version of CanExecute instead", true)]
-        public bool CanExecute(object parameter)
+        [Obsolete("Use the strongly typed version of CanExecute instead", false)]
+        public virtual bool CanExecute(object parameter)
         {
             var safeParameter = (P)typeof(P).MakeSafeValueCore(parameter);
             return CanExecute(safeParameter);
@@ -32,8 +32,8 @@ namespace MvvX.ViewModelCommands
 
         public abstract void Execute(P parameter);
 
-        [Obsolete("Use the strongly typed version of Execute instead", true)]
-        public void Execute(object parameter)
+        [Obsolete("Use the strongly typed version of Execute instead", false)]
+        public virtual void Execute(object parameter)
         {
             var safeParameter = (P)typeof(P).MakeSafeValueCore(parameter);
             Execute(safeParameter);

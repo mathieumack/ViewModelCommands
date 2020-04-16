@@ -17,8 +17,8 @@ namespace MvvX.ViewModelCommands
             return true;
         }
 
-        [Obsolete("Use the strongly typed version of CanExecute instead", true)]
-        public bool CanExecute(object parameter)
+        [Obsolete("Use the strongly typed version of CanExecute instead", false)]
+        public virtual bool CanExecute(object parameter)
         {
             return CanExecute();
         }
@@ -29,8 +29,8 @@ namespace MvvX.ViewModelCommands
 
         public abstract void Execute();
 
-        [Obsolete("Use the strongly typed version of CanExecute instead", true)]
-        public void Execute(object parameter)
+        [Obsolete("Use the strongly typed version of CanExecute instead", false)]
+        public virtual void Execute(object parameter)
         {
             Execute();
         }
