@@ -3,6 +3,12 @@ name: '$(Date:yyyy).1$(Date:MMdd)$(Rev:.r)'
 pool:
   vmImage: "windows-2019"
 
+variables:
+- name: BuildConfiguration
+  value: release
+- name: Version
+  value: $(Date:yyyy).1$(Date:MMdd)$(Rev:.r)
+
 # specific branch build with batching
 trigger:
   batch: true
@@ -33,20 +39,20 @@ steps:
     organization: 'mathieumack-github'
     projectKey: 'github-$(Build.DefinitionName)'
     projectName: '$(Build.DefinitionName)'
-    projectVersion: '$(Build.BuildNumber)'
+    projectVersion: '$(Version)'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build PR'
   inputs:
     projects: '**/*.csproj'
-    arguments: '-c $(BuildConfiguration) -p:FileVersion=$(Build.BuildNumber) /p:Version=$(Build.BuildNumber)-alpha'
+    arguments: '-c $(BuildConfiguration) -p:FileVersion=$(Version) /p:Version=$(Version)-alpha'
   condition: eq(variables['Build.Reason'], 'PullRequest')
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
     projects: '**/*.csproj'
-    arguments: '-c $(BuildConfiguration) -p:FileVersion=$(Build.BuildNumber) /p:Version=$(Build.BuildNumber)'
+    arguments: '-c $(BuildConfiguration) -p:FileVersion=$(Version) /p:Version=$(Version)'
   condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
 
 - task: DotNetCoreCLI@2
