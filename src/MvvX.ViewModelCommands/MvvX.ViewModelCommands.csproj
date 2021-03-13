@@ -7,6 +7,7 @@
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <Product>ViewModel Command object for mvvmcross ViewModels</Product>
     <ProjectGuid>263d843e-60e3-4150-bf69-6d1400340805</ProjectGuid>
+	<GenerateAppxPackageOnBuild>true</GenerateAppxPackageOnBuild>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseUrl>https://github.com/mathieumack/ViewModelCommands</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mathieumack/ViewModelCommands</PackageProjectUrl>
