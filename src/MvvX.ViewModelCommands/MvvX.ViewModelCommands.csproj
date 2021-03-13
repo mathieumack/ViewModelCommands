@@ -5,20 +5,18 @@
     <RootNamespace>MvvX.ViewModelCommands</RootNamespace>
     <PackageId>MvvX.ViewModelCommands</PackageId>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <NeutralLanguage>en</NeutralLanguage>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Product>ViewModel command object for mvvmcross</Product>
+    <Product>ViewModel Command object for mvvmcross ViewModels</Product>
     <ProjectGuid>263d843e-60e3-4150-bf69-6d1400340805</ProjectGuid>
+	<GenerateAppxPackageOnBuild>true</GenerateAppxPackageOnBuild>
     <RepositoryType>git</RepositoryType>
-    <PackageLicenseUrl>https://dev.azure.com/econocom-das-grenoble/Libraries/_git/MvvX.ViewModelCommands</PackageLicenseUrl>
-    <PackageProjectUrl>https://dev.azure.com/econocom-das-grenoble/Libraries/_git/MvvX.ViewModelCommands</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mathieumack/ViewModelCommands</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mathieumack/ViewModelCommands</PackageProjectUrl>
     <Authors>MACK Mathieu</Authors>
     <Company></Company>
-    <Description>This package contains a helper Command for your ViewModels. The goal is to separate Command implementation from ViewModel class</Description>
+    <Description>This package contains a helper Command for your MvvmCross ViewModels. The goal is to separate Command implementation from ViewModel class</Description>
     <RepositoryUrl>https://dev.azure.com/econocom-das-grenoble/Libraries/_git/MvvX.ViewModelCommands</RepositoryUrl>
     <PackageTags>mvvm;mvvmcross;xamarin;android;ios;mac;forms;monodroid;monotouch;xamarin.android;xamarin.ios;wpf;plugins</PackageTags>
     <PackageIconUrl />
-    <Copyright>Copyright (c) 2019</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

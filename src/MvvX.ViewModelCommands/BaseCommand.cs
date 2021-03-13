@@ -12,6 +12,10 @@ namespace MvvX.ViewModelCommands
 
         public T ViewModel { get; private set; }
 
+        /// <summary>
+        /// Called to link the Command with the ViewModel
+        /// </summary>
+        /// <param name="viewModel"></param>
         public virtual void Configure(T viewModel)
         {
             ViewModel = viewModel;
@@ -21,6 +25,9 @@ namespace MvvX.ViewModelCommands
 
         #region CanExecute changed event
 
+        /// <summary>
+        /// Called when you need to refresh the CanExecute
+        /// </summary>
         public void RaiseCanExecuteChanged()
         {
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
