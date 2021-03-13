@@ -14,6 +14,11 @@ namespace MvvX.ViewModelCommands
     {
         #region CanExecute
 
+        /// <summary>
+        /// Check that the Command can be executed
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public virtual bool CanExecute(P parameter)
         {
             return true;
@@ -30,6 +35,10 @@ namespace MvvX.ViewModelCommands
 
         #region Execute
 
+        /// <summary>
+        /// Execute your command with parameter
+        /// </summary>
+        /// <param name="parameter">Parameter that can be null</param>
         public abstract void Execute(P parameter);
 
         [Obsolete("Use the strongly typed version of Execute instead", false)]
