@@ -54,8 +54,7 @@ steps:
   inputs:
     command: test
     projects: |
-     **/*Tests.csproj
-     
+     **/*Tests.csproj     
     arguments: '-c $(BuildConfiguration) --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover --collect:"Code Coverage" /p:CoverletOutput="$(Agent.TempDirectory)/"'
   continueOnError: true
 
@@ -63,7 +62,7 @@ steps:
   displayName: 'NuGet push'
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.SourcesDirectory)/**/*.nupkg'
+    packagesToPush: '$(Build.SourcesDirectory)/src/**/*.nupkg'
     nuGetFeedType: external
     publishFeedCredentials: Nuget.org
 
