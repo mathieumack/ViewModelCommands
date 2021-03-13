@@ -62,7 +62,7 @@ steps:
   displayName: 'NuGet push'
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.SourcesDirectory)/src/**/*.nupkg'
+    packagesToPush: '$(Build.SourcesDirectory)/**/*.nupkg'
     nuGetFeedType: external
     publishFeedCredentials: Nuget.org
 
